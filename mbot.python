@@ -1,6 +1,10 @@
-import cyberpi,time,mbot2,event
+import cyberpi,time,mbot2,event # Libraries Usesd
+
+#Parameters for voice recognition (NavigateUrl, Accesstoken, etc.)
 cyberpi.speech.set_recognition_address(url = "{NAVIGATEURL}")
 cyberpi.speech.set_access_token(token = "{ACCESSTOKEN}")
+
+# Initilize the variables
 voiceCommand = 0
 next = 0
 
