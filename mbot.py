@@ -8,14 +8,14 @@ cyberpi.speech.set_access_token(token = "{ACCESSTOKEN}")
 voiceCommand = 0
 next = 0
 
-@event.start
+@event.start # This event will allow the function to run when the robot starts to turn on
 def on_start():
     global voiceCommand
     global next
     while not str(voiceCommand).find(str("stop")) > -1:
         cyberpi.console.print("Give me an instruction")
-        cyberpi.cloud.listen("english", 3)
-        voiceCommand = cyberpi.cloud.listen_result()
+        cyberpi.cloud.listen("english", 3) #The CyberPi Cloud Listens to the voice in english for 3 seconds
+        voiceCommand = cyberpi.cloud.listen_result() # Sets voiceCommand equal to the string returned from the CyberPi Cloud
         if str(voiceCommand).find(str("red")) > -1 and next == 0:
             mbot2.forward(0)
             cyberpi.console.print("red")
